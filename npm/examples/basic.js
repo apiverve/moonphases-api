@@ -15,7 +15,7 @@ const api = new moonphasesAPI({
 
 // Example query
 var query = {
-  date: "12-02-2025"
+  today: true
 };
 
 // Make the API request using callback
