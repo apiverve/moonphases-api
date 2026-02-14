@@ -13,12 +13,7 @@ const API_URL = 'https://api.apiverve.com/v1/moonphases';
  */
 async function callMoonPhasesAPI() {
   try {
-    // Query parameters
-    const params &#x3D; new URLSearchParams({
-            date: &#x27;12-02-2025&#x27;
-        });
-
-    const response = await fetch(`${API_URL}?${params}`, {
+    const response = await fetch(API_URL, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
