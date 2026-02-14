@@ -1,32 +1,34 @@
 openapi: 3.0.4
 info:
   title: Moon Phases
-  description: Moon Phases is a simple tool for getting the moon phases. It returns the moon phase for a given date.
+  description: >-
+    Moon Phases is a simple tool for getting the moon phases. It returns the
+    moon phase for a given date.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/moonphases:
     get:
-      summary: Get Moon Phase for a date
-      description: Moon Phases is a simple tool for getting the moon phases. It returns the moon phase for a given date.
+      summary: Get Today's Moon Phase
+      description: Get the moon phase for today
       operationId: moonphases
       parameters:
-      - name: date
-        in: query
-        schema:
-          type: string
-        required: false
-        description: 'The date for which you want to get the moon phase (e.g., MM-DD-YYYY : 01-01-2022)'
-        example: 12-03-2025
+        - name: today
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: Get the moon phase for today
+          example: true
       responses:
         '200':
           description: Successful Response
@@ -42,28 +44,28 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
-                  phase: Last Quarter
-                  phaseEmoji: "\U0001F317"
+                  phase: Waning Crescent
+                  phaseEmoji: 🌘
                   waxing: false
                   waning: true
-                  lunarAge: 22.9178112143074
-                  lunarAgePercent: 0.776070271362642
-                  lunationNumber: 1264
-                  lunarDistance: 62.6837567161013
-                  nextFullMoon: 2025-03-23T00:00:00.0000000Z
-                  lastFullMoon: 2025-01-22T00:00:00.0000000Z
+                  lunarAge: 26.61193415670738
+                  lunarAgePercent: 0.9011650706672754
+                  lunationNumber: 1274
+                  lunarDistance: 63.77810628163608
+                  nextFullMoon: '2026-01-16T00:00:00Z'
+                  lastFullMoon: '2025-11-17T00:00:00Z'
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -71,4 +73,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
