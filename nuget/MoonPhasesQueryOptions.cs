@@ -11,10 +11,9 @@ namespace APIVerve.API.MoonPhases
     public class MoonPhasesQueryOptions
     {
         /// <summary>
-        /// The date for which you want to get the moon phase (e.g., MM-DD-YYYY : 01-01-2022)
-        /// Example: 12-02-2025
+        /// Get the moon phase for today
         /// </summary>
-        [JsonProperty("date")]
-        public string Date { get; set; }
+        [JsonProperty("today")]
+        public string Today { get; set; }
     }
 }
