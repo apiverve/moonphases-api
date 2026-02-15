@@ -1,1 +1,3 @@
-from .apiClient import MoonphasesAPIClient
+from .apiClient import MoonphasesAPIClient, MoonphasesAPIClientError
+
+__all__ = ['MoonphasesAPIClient', 'MoonphasesAPIClientError']
