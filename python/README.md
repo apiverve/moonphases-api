@@ -225,8 +225,9 @@ from apiverve_moonphases.apiClient import MoonphasesAPIClient
 
 api = MoonphasesAPIClient("[YOUR_API_KEY]")
 
+query = { "today": true }
+
 try:
-    query = { "today": true }
     result = api.execute(query)
     print(result)
 finally:
