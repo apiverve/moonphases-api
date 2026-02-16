@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/moonphases",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Moon Phases is a simple tool for getting the moon phases. It returns the moon phase for a given date.",
   "main": "index.js",
   "types": "index.d.ts",
