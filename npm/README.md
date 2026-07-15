@@ -122,16 +122,19 @@ async function makeRequest() {
   "status": "ok",
   "error": null,
   "data": {
-    "phase": "Last Quarter",
-    "phaseEmoji": "🌗",
+    "phase": "Waning Crescent",
+    "phaseEmoji": "🌘",
+    "illumination": 9.9,
     "waxing": false,
     "waning": true,
-    "lunarAge": 22.91781121430745,
-    "lunarAgePercent": 0.7760702713626415,
-    "lunationNumber": 1264,
-    "lunarDistance": 62.68375671610132,
-    "nextFullMoon": "2025-03-23T00:00:00Z",
-    "lastFullMoon": "2025-01-22T00:00:00Z"
+    "lunarAge": 26.61193415670738,
+    "lunarAgePercent": 0.9011650706672754,
+    "lunationNumber": 1274,
+    "lunarDistance": 63.77810628163608,
+    "nextFullMoon": "2026-01-16T00:00:00Z",
+    "lastFullMoon": "2025-11-17T00:00:00Z",
+    "daysToFullMoon": 28,
+    "daysSinceFullMoon": 2
   }
 }
 ```
