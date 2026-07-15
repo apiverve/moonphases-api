@@ -4,25 +4,40 @@ declare module '@apiverve/moonphases' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface moonphasesResponse {
     status: string;
     error: string | null;
     data: MoonPhasesData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface MoonPhasesData {
-      phase:           string;
-      phaseEmoji:      string;
-      waxing:          boolean;
-      waning:          boolean;
-      lunarAge:        number;
-      lunarAgePercent: number;
-      lunationNumber:  number;
-      lunarDistance:   number;
-      nextFullMoon:    Date;
-      lastFullMoon:    Date;
+      phase:             null | string;
+      phaseEmoji:        null | string;
+      illumination:      number | null;
+      waxing:            boolean | null;
+      waning:            boolean | null;
+      lunarAge:          number | null;
+      lunarAgePercent:   number | null;
+      lunationNumber:    number | null;
+      lunarDistance:     number | null;
+      nextFullMoon:      Date | null;
+      lastFullMoon:      Date | null;
+      daysToFullMoon:    number | null;
+      daysSinceFullMoon: number | null;
   }
 
   export default class moonphasesWrapper {
