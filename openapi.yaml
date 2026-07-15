@@ -52,6 +52,7 @@ paths:
                 data:
                   phase: Waning Crescent
                   phaseEmoji: 🌘
+                  illumination: 9.9
                   waxing: false
                   waning: true
                   lunarAge: 26.61193415670738
@@ -60,6 +61,8 @@ paths:
                   lunarDistance: 63.77810628163608
                   nextFullMoon: '2026-01-16T00:00:00Z'
                   lastFullMoon: '2025-11-17T00:00:00Z'
+                  daysToFullMoon: 28
+                  daysSinceFullMoon: 2
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
