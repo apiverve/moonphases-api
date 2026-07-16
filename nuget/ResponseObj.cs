@@ -25,6 +25,9 @@ namespace APIVerve.API.MoonPhases
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -35,28 +38,49 @@ namespace APIVerve.API.MoonPhases
         [JsonProperty("phaseEmoji")]
         public string PhaseEmoji { get; set; }
 
+        [JsonProperty("illumination")]
+        public double? Illumination { get; set; }
+
         [JsonProperty("waxing")]
-        public bool Waxing { get; set; }
+        public bool? Waxing { get; set; }
 
         [JsonProperty("waning")]
-        public bool Waning { get; set; }
+        public bool? Waning { get; set; }
 
         [JsonProperty("lunarAge")]
-        public double LunarAge { get; set; }
+        public double? LunarAge { get; set; }
 
         [JsonProperty("lunarAgePercent")]
-        public double LunarAgePercent { get; set; }
+        public double? LunarAgePercent { get; set; }
 
         [JsonProperty("lunationNumber")]
-        public long LunationNumber { get; set; }
+        public long? LunationNumber { get; set; }
 
         [JsonProperty("lunarDistance")]
-        public double LunarDistance { get; set; }
+        public double? LunarDistance { get; set; }
 
         [JsonProperty("nextFullMoon")]
-        public DateTimeOffset NextFullMoon { get; set; }
+        public DateTimeOffset? NextFullMoon { get; set; }
 
         [JsonProperty("lastFullMoon")]
-        public DateTimeOffset LastFullMoon { get; set; }
+        public DateTimeOffset? LastFullMoon { get; set; }
+
+        [JsonProperty("daysToFullMoon")]
+        public long? DaysToFullMoon { get; set; }
+
+        [JsonProperty("daysSinceFullMoon")]
+        public long? DaysSinceFullMoon { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
