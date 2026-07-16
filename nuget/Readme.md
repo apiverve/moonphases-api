@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.MoonPhases;
 
 class Program
 {
@@ -60,8 +60,8 @@ class Program
         // Initialize the API client
         var apiClient = new MoonPhasesAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    today = true
+        var queryOptions = new MoonPhasesQueryOptions {
+    Today = true
 };
 
         // Make the API call
@@ -116,7 +116,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.MoonPhases;
 
 public class Example
 {
@@ -124,8 +124,8 @@ public class Example
     {
         var apiClient = new MoonPhasesAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    today = true
+        var queryOptions = new MoonPhasesQueryOptions {
+    Today = true
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -148,7 +148,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.MoonPhases;
 
 public class Example
 {
@@ -156,8 +156,8 @@ public class Example
     {
         var apiClient = new MoonPhasesAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    today = true
+        var queryOptions = new MoonPhasesQueryOptions {
+    Today = true
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -185,7 +185,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.MoonPhases;
 
 public class Example
 {
@@ -193,8 +193,8 @@ public class Example
     {
         var apiClient = new MoonPhasesAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    today = true
+        var queryOptions = new MoonPhasesQueryOptions {
+    Today = true
 };
 
         try
@@ -237,7 +237,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.MoonPhases;
 
 public class Example
 {
@@ -249,8 +249,8 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    today = true
+        var queryOptions = new MoonPhasesQueryOptions {
+    Today = true
 };
 
         try
@@ -290,8 +290,8 @@ var apiClient = new MoonPhasesAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    today = true
+var queryOptions = new MoonPhasesQueryOptions {
+    Today = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -316,8 +316,8 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    today = true
+var queryOptions = new MoonPhasesQueryOptions {
+    Today = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -334,8 +334,8 @@ var apiClient = new MoonPhasesAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    today = true
+var queryOptions = new MoonPhasesQueryOptions {
+    Today = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -346,8 +346,8 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    today = true
+var queryOptions = new MoonPhasesQueryOptions {
+    Today = true
 };
 
 using (var apiClient = new MoonPhasesAPIClient("[YOUR_API_KEY]"))
@@ -367,16 +367,19 @@ using (var apiClient = new MoonPhasesAPIClient("[YOUR_API_KEY]"))
   "status": "ok",
   "error": null,
   "data": {
-    "phase": "Last Quarter",
-    "phaseEmoji": "🌗",
+    "phase": "Waning Crescent",
+    "phaseEmoji": "🌘",
+    "illumination": 9.9,
     "waxing": false,
     "waning": true,
-    "lunarAge": 22.91781121430745,
-    "lunarAgePercent": 0.7760702713626415,
-    "lunationNumber": 1264,
-    "lunarDistance": 62.68375671610132,
-    "nextFullMoon": "2025-03-23T00:00:00Z",
-    "lastFullMoon": "2025-01-22T00:00:00Z"
+    "lunarAge": 26.61193415670738,
+    "lunarAgePercent": 0.9011650706672754,
+    "lunationNumber": 1274,
+    "lunarDistance": 63.77810628163608,
+    "nextFullMoon": "2026-01-16T00:00:00Z",
+    "lastFullMoon": "2025-11-17T00:00:00Z",
+    "daysToFullMoon": 28,
+    "daysSinceFullMoon": 2
   }
 }
 ```
