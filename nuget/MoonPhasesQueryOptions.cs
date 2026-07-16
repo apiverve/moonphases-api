@@ -14,6 +14,6 @@ namespace APIVerve.API.MoonPhases
         /// Get the moon phase for today
         /// </summary>
         [JsonProperty("today")]
-        public string Today { get; set; }
+        public bool? Today { get; set; }
     }
 }
