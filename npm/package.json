@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/moonphases",
-  "version": "1.2.0",
-  "description": "Moon Phases is a simple tool for getting the moon phases. It returns the moon phase for a given date.",
+  "version": "1.2.2",
+  "description": "Moon Phases calculates the current lunar phase, illumination percentage, and lunar age for today. It reports waxing or waning status, Earth-moon distance, and emoji representations, while paid plans add custom date queries and full moon tracking.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "moon phases", "moon phases api", "moon phases tool", "moon phases software", "moon phases service"
+    "moon phase api", "moon phases api", "lunar phase api", "phases of the moon api", "moon phase icon api"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/moonphases-api/issues"
   },
-  "homepage": "https://moonphases.apiverve.com?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/moonphases?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
