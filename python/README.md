@@ -1,13 +1,12 @@
 Moon Phases API
 ============
 
-Moon Phases is a simple tool for getting the moon phases. It returns the moon phase for a given date.
+Moon Phases calculates the current lunar phase, illumination percentage, and lunar age for today. It reports waxing or waning status, Earth-moon distance, and emoji representations, while paid plans add custom date queries and full moon tracking.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Moon Phases API](https://moonphases.apiverve.com?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-moonphases.svg)](https://pypi.org/project/apiverve-moonphases/)
+
+This is a Python wrapper for the [Moon Phases API](https://apiverve.com/marketplace/moonphases?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-moonphases
 
 ## Configuration
 
-Before using the moonphases API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Moon Phases API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -60,7 +59,7 @@ except Exception as e:
 
 ## Usage
 
-The Moon Phases API documentation is found here: [https://docs.apiverve.com/ref/moonphases](https://docs.apiverve.com/ref/moonphases?utm_source=pypi&utm_medium=readme).
+The Moon Phases API documentation is found here: [https://docs.apiverve.com/ref/moonphases](https://docs.apiverve.com/ref/moonphases?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -102,16 +101,19 @@ print(result)
   "status": "ok",
   "error": null,
   "data": {
-    "phase": "Last Quarter",
-    "phaseEmoji": "🌗",
+    "phase": "Waning Crescent",
+    "phaseEmoji": "🌘",
+    "illumination": 9.9,
     "waxing": false,
     "waning": true,
-    "lunarAge": 22.91781121430745,
-    "lunarAgePercent": 0.7760702713626415,
-    "lunationNumber": 1264,
-    "lunarDistance": 62.68375671610132,
-    "nextFullMoon": "2025-03-23T00:00:00Z",
-    "lastFullMoon": "2025-01-22T00:00:00Z"
+    "lunarAge": 26.61193415670738,
+    "lunarAgePercent": 0.9011650706672754,
+    "lunationNumber": 1274,
+    "lunarDistance": 63.77810628163608,
+    "nextFullMoon": "2026-01-16T00:00:00Z",
+    "lastFullMoon": "2025-11-17T00:00:00Z",
+    "daysToFullMoon": 28,
+    "daysSinceFullMoon": 2
   }
 }
 ```
@@ -239,7 +241,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -250,12 +252,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
