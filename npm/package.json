@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/moonphases",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Moon Phases calculates the current lunar phase, illumination percentage, and lunar age for today. It reports waxing or waning status, Earth-moon distance, and emoji representations, while paid plans add custom date queries and full moon tracking.",
   "main": "index.js",
   "types": "index.d.ts",
