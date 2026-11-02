@@ -10,7 +10,7 @@ module APIVerve
     #
     # @example Basic usage
     #   client = APIVerve::Moonphases::Client.new(api_key: "your_api_key")
-    #   response = client.execute({ today: true })
+    #   response = client.execute({ today: true, phases: true })
     #   puts response
     #
     # @see https://apiverve.com/marketplace/moonphases?utm_source=ruby&utm_medium=referral&utm_content=readme
@@ -19,7 +19,7 @@ module APIVerve
       DEFAULT_TIMEOUT = 30
 
       # Validation rules for parameters
-      VALIDATION_RULES = { 'today' => { type: 'boolean', required: false } }
+      VALIDATION_RULES = { 'today' => { type: 'boolean', required: false }, 'phases' => { type: 'boolean', required: false } }
 
       # Format validation patterns
       FORMAT_PATTERNS = {

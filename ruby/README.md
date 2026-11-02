@@ -1,6 +1,6 @@
 # Moon Phases API - Ruby Gem
 
-Moon Phases calculates the current lunar phase, illumination percentage, and lunar age for today. It reports waxing or waning status, Earth-moon distance, and emoji representations, while paid plans add custom date queries and full moon tracking.
+Moon Phases calculates the current lunar phase, illumination percentage, and lunar age for today. It reports waxing or waning status, Earth-moon distance in Earth radii and kilometers, the next principal phase and emoji representations, while paid plans add custom date queries and the dates of the next new moon, first quarter, full moon and last quarter.
 
 ## Installation
 
@@ -35,7 +35,10 @@ require 'apiverve_moonphases'
 client = APIVerve::Moonphases::Client.new(api_key: "YOUR_API_KEY")
 
 # Make a request
-response = client.execute({ today: true })
+response = client.execute({
+  today: true,
+  phases: true
+})
 
 # Print the response
 puts response
@@ -46,7 +49,7 @@ puts response
 
 ```ruby
 begin
-  response = client.execute({ today: true })
+  response = client.execute({ today: true, phases: true })
   puts response["data"]
 rescue APIVerve::Moonphases::ValidationError => e
   puts "Validation error: #{e.errors.join(', ')}"
@@ -73,19 +76,30 @@ client = APIVerve::Moonphases::Client.new(
   "status": "ok",
   "error": null,
   "data": {
-    "phase": "Waning Crescent",
-    "phaseEmoji": "🌘",
-    "illumination": 9.9,
+    "date": "2026-10-27",
+    "phase": "Full",
+    "phaseEmoji": "🌕",
+    "illumination": 98.8,
     "waxing": false,
     "waning": true,
-    "lunarAge": 26.61193415670738,
-    "lunarAgePercent": 0.9011650706672754,
-    "lunationNumber": 1274,
-    "lunarDistance": 63.77810628163608,
-    "nextFullMoon": "2026-01-16T00:00:00Z",
-    "lastFullMoon": "2025-11-17T00:00:00Z",
-    "daysToFullMoon": 28,
-    "daysSinceFullMoon": 2
+    "lunarAge": 15.775469393347242,
+    "lunarAgePercent": 0.534207769602574,
+    "lunationNumber": 1285,
+    "lunarDistance": 57.48396905317442,
+    "nextFullMoon": "2026-11-24T17:29:23.611Z",
+    "lastFullMoon": "2026-10-26T04:45:20.833Z",
+    "daysToFullMoon": 29,
+    "daysSinceFullMoon": 1,
+    "lunarDistanceKm": 366230,
+    "nextPhase": "Last Quarter",
+    "nextPhaseDate": "2026-11-02T13:56:21.527Z",
+    "daysToNextPhase": 6,
+    "nextNewMoon": "2026-11-09T23:07:22.222Z",
+    "lastNewMoon": "2026-10-11T10:23:19.444Z",
+    "daysToNewMoon": 14,
+    "daysSinceNewMoon": 16,
+    "nextFirstQuarter": "2026-11-17T08:18:22.916Z",
+    "nextLastQuarter": "2026-11-02T13:56:21.527Z"
   }
 }
 ```
