@@ -1,7 +1,7 @@
 Moon Phases API
 ============
 
-Moon Phases calculates the current lunar phase, illumination percentage, and lunar age for today. It reports waxing or waning status, Earth-moon distance, and emoji representations, while paid plans add custom date queries and full moon tracking.
+Moon Phases calculates the current lunar phase, illumination percentage, and lunar age for today. It reports waxing or waning status, Earth-moon distance in Earth radii and kilometers, the next principal phase and emoji representations, while paid plans add custom date queries and the dates of the next new moon, first quarter, full moon and last quarter.
 
 
 [![PyPI version](https://img.shields.io/pypi/v/apiverve-moonphases.svg)](https://pypi.org/project/apiverve-moonphases/)
@@ -43,7 +43,10 @@ from apiverve_moonphases.apiClient import MoonphasesAPIClient
 # Initialize the client with your APIVerve API key
 api = MoonphasesAPIClient("[YOUR_API_KEY]")
 
-query = { "today": true }
+query = {
+    "today": true,
+    "phases": true
+}
 
 try:
     # Make the API call
@@ -81,7 +84,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "today": true }
+query = {
+    "today": true,
+    "phases": true
+}
 ```
 
 ###### Simple Request
@@ -101,19 +107,30 @@ print(result)
   "status": "ok",
   "error": null,
   "data": {
-    "phase": "Waning Crescent",
-    "phaseEmoji": "🌘",
-    "illumination": 9.9,
+    "date": "2026-10-27",
+    "phase": "Full",
+    "phaseEmoji": "🌕",
+    "illumination": 98.8,
     "waxing": false,
     "waning": true,
-    "lunarAge": 26.61193415670738,
-    "lunarAgePercent": 0.9011650706672754,
-    "lunationNumber": 1274,
-    "lunarDistance": 63.77810628163608,
-    "nextFullMoon": "2026-01-16T00:00:00Z",
-    "lastFullMoon": "2025-11-17T00:00:00Z",
-    "daysToFullMoon": 28,
-    "daysSinceFullMoon": 2
+    "lunarAge": 15.775469393347242,
+    "lunarAgePercent": 0.534207769602574,
+    "lunationNumber": 1285,
+    "lunarDistance": 57.48396905317442,
+    "nextFullMoon": "2026-11-24T17:29:23.611Z",
+    "lastFullMoon": "2026-10-26T04:45:20.833Z",
+    "daysToFullMoon": 29,
+    "daysSinceFullMoon": 1,
+    "lunarDistanceKm": 366230,
+    "nextPhase": "Last Quarter",
+    "nextPhaseDate": "2026-11-02T13:56:21.527Z",
+    "daysToNextPhase": 6,
+    "nextNewMoon": "2026-11-09T23:07:22.222Z",
+    "lastNewMoon": "2026-10-11T10:23:19.444Z",
+    "daysToNewMoon": 14,
+    "daysSinceNewMoon": 16,
+    "nextFirstQuarter": "2026-11-17T08:18:22.916Z",
+    "nextLastQuarter": "2026-11-02T13:56:21.527Z"
   }
 }
 ```
@@ -131,7 +148,10 @@ from apiverve_moonphases.apiClient import MoonphasesAPIClient, MoonphasesAPIClie
 
 api = MoonphasesAPIClient("[YOUR_API_KEY]")
 
-query = { "today": true }
+query = {
+    "today": true,
+    "phases": true
+}
 
 try:
     result = api.execute(query)
@@ -152,7 +172,10 @@ from apiverve_moonphases.apiClient import MoonphasesAPIClient, MoonphasesAPIClie
 
 api = MoonphasesAPIClient("[YOUR_API_KEY]")
 
-query = { "today": true }
+query = {
+    "today": true,
+    "phases": true
+}
 
 try:
     result = api.execute(query)
@@ -186,7 +209,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_moonphases.apiClient import MoonphasesAPIClient, MoonphasesAPIClientError
 
-query = { "today": true }
+query = {
+    "today": true,
+    "phases": true
+}
 
 # Using context manager ensures proper cleanup
 with MoonphasesAPIClient("[YOUR_API_KEY]") as api:
@@ -212,7 +238,10 @@ from apiverve_moonphases.apiClient import MoonphasesAPIClient
 # Enable debug mode
 api = MoonphasesAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "today": true }
+query = {
+    "today": true,
+    "phases": true
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -227,7 +256,10 @@ from apiverve_moonphases.apiClient import MoonphasesAPIClient
 
 api = MoonphasesAPIClient("[YOUR_API_KEY]")
 
-query = { "today": true }
+query = {
+    "today": true,
+    "phases": true
+}
 
 try:
     result = api.execute(query)

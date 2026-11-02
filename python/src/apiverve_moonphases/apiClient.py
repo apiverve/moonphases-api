@@ -24,7 +24,8 @@ class ValidationError(MoonphasesAPIClientError):
 class MoonphasesAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "today": {"type": "boolean", "required": False, "default": True}
+        "today": {"type": "boolean", "required": False, "default": True},
+        "phases": {"type": "boolean", "required": False, "default": False}
     }
 
     # Format validation patterns
