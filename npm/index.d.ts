@@ -25,6 +25,7 @@ declare module '@apiverve/moonphases' {
 
 
   interface MoonPhasesData {
+      date:              Date | null;
       phase:             null | string;
       phaseEmoji:        null | string;
       illumination:      number | null;
@@ -38,6 +39,16 @@ declare module '@apiverve/moonphases' {
       lastFullMoon:      Date | null;
       daysToFullMoon:    number | null;
       daysSinceFullMoon: number | null;
+      lunarDistanceKM:   number | null;
+      nextPhase:         null | string;
+      nextPhaseDate:     Date | null;
+      daysToNextPhase:   number | null;
+      nextNewMoon:       Date | null;
+      lastNewMoon:       Date | null;
+      daysToNewMoon:     number | null;
+      daysSinceNewMoon:  number | null;
+      nextFirstQuarter:  Date | null;
+      nextLastQuarter:   Date | null;
   }
 
   export default class moonphasesWrapper {

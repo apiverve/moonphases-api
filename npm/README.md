@@ -1,6 +1,6 @@
 # Moon Phases API
 
-Moon Phases calculates the current lunar phase, illumination percentage, and lunar age for today. It reports waxing or waning status, Earth-moon distance, and emoji representations, while paid plans add custom date queries and full moon tracking.
+Moon Phases calculates the current lunar phase, illumination percentage, and lunar age for today. It reports waxing or waning status, Earth-moon distance in Earth radii and kilometers, the next principal phase and emoji representations, while paid plans add custom date queries and the dates of the next new moon, first quarter, full moon and last quarter.
 
 [![npm version](https://img.shields.io/npm/v/@apiverve/moonphases.svg)](https://www.npmjs.com/package/@apiverve/moonphases)
 
@@ -57,7 +57,8 @@ Using the API is simple. All you have to do is make a request. The API will retu
 
 ```javascript
 var query = {
-  today: true
+  today: true,
+  phases: false
 };
 
 api.execute(query, function (error, data) {
@@ -77,7 +78,8 @@ You can also use promises to make requests. The API returns a promise that you c
 
 ```javascript
 var query = {
-  today: true
+  today: true,
+  phases: false
 };
 
 api.execute(query)
@@ -98,7 +100,8 @@ You can also use async/await to make requests. The API returns a promise that yo
 ```javascript
 async function makeRequest() {
     var query = {
-  today: true
+  today: true,
+  phases: false
 };
 
     try {
@@ -119,19 +122,30 @@ async function makeRequest() {
   "status": "ok",
   "error": null,
   "data": {
-    "phase": "Waning Crescent",
-    "phaseEmoji": "🌘",
-    "illumination": 9.9,
+    "date": "2026-10-27",
+    "phase": "Full",
+    "phaseEmoji": "🌕",
+    "illumination": 98.8,
     "waxing": false,
     "waning": true,
-    "lunarAge": 26.61193415670738,
-    "lunarAgePercent": 0.9011650706672754,
-    "lunationNumber": 1274,
-    "lunarDistance": 63.77810628163608,
-    "nextFullMoon": "2026-01-16T00:00:00Z",
-    "lastFullMoon": "2025-11-17T00:00:00Z",
-    "daysToFullMoon": 28,
-    "daysSinceFullMoon": 2
+    "lunarAge": 15.775469393347242,
+    "lunarAgePercent": 0.534207769602574,
+    "lunationNumber": 1285,
+    "lunarDistance": 57.48396905317442,
+    "nextFullMoon": "2026-11-24T17:29:23.611Z",
+    "lastFullMoon": "2026-10-26T04:45:20.833Z",
+    "daysToFullMoon": 29,
+    "daysSinceFullMoon": 1,
+    "lunarDistanceKm": 366230,
+    "nextPhase": "Last Quarter",
+    "nextPhaseDate": "2026-11-02T13:56:21.527Z",
+    "daysToNextPhase": 6,
+    "nextNewMoon": "2026-11-09T23:07:22.222Z",
+    "lastNewMoon": "2026-10-11T10:23:19.444Z",
+    "daysToNewMoon": 14,
+    "daysSinceNewMoon": 16,
+    "nextFirstQuarter": "2026-11-17T08:18:22.916Z",
+    "nextLastQuarter": "2026-11-02T13:56:21.527Z"
   }
 }
 ```

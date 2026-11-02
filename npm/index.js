@@ -30,7 +30,7 @@ class moonphasesWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/moonphases';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"today":{"type":"boolean","required":false,"default":true}};
+        this.validationRules = {"today":{"type":"boolean","required":false,"default":true},"phases":{"type":"boolean","required":false,"default":false}};
     }
 
     /**

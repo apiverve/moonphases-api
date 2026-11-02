@@ -15,7 +15,8 @@ const api = new moonphasesAPI({
 
 // Example query
 var query = {
-  today: true
+  today: true,
+  phases: false
 };
 
 // Make the API request using callback
