@@ -67,7 +67,8 @@ namespace APIVerve.API.MoonPhases
         /// <summary>Validation rules for parameters</summary>
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
-            { "today", new ValidationRule { Type = "boolean", Required = false } }
+            { "today", new ValidationRule { Type = "boolean", Required = false } },
+            { "phases", new ValidationRule { Type = "boolean", Required = false } }
         };
 
         /// <summary>Format validation patterns</summary>

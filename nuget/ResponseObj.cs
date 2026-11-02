@@ -32,6 +32,9 @@ namespace APIVerve.API.MoonPhases
 
     public partial class Data
     {
+        [JsonProperty("date")]
+        public DateTimeOffset? Date { get; set; }
+
         [JsonProperty("phase")]
         public string Phase { get; set; }
 
@@ -70,6 +73,36 @@ namespace APIVerve.API.MoonPhases
 
         [JsonProperty("daysSinceFullMoon")]
         public long? DaysSinceFullMoon { get; set; }
+
+        [JsonProperty("lunarDistanceKm")]
+        public long? LunarDistanceKm { get; set; }
+
+        [JsonProperty("nextPhase")]
+        public string NextPhase { get; set; }
+
+        [JsonProperty("nextPhaseDate")]
+        public DateTimeOffset? NextPhaseDate { get; set; }
+
+        [JsonProperty("daysToNextPhase")]
+        public long? DaysToNextPhase { get; set; }
+
+        [JsonProperty("nextNewMoon")]
+        public DateTimeOffset? NextNewMoon { get; set; }
+
+        [JsonProperty("lastNewMoon")]
+        public DateTimeOffset? LastNewMoon { get; set; }
+
+        [JsonProperty("daysToNewMoon")]
+        public long? DaysToNewMoon { get; set; }
+
+        [JsonProperty("daysSinceNewMoon")]
+        public long? DaysSinceNewMoon { get; set; }
+
+        [JsonProperty("nextFirstQuarter")]
+        public DateTimeOffset? NextFirstQuarter { get; set; }
+
+        [JsonProperty("nextLastQuarter")]
+        public DateTimeOffset? NextLastQuarter { get; set; }
     }
 
     public partial class Premium

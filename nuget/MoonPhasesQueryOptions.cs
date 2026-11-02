@@ -15,5 +15,11 @@ namespace APIVerve.API.MoonPhases
         /// </summary>
         [JsonProperty("today")]
         public bool? Today { get; set; }
+
+        /// <summary>
+        /// Include the dates of the next new moon, first quarter and last quarter and the days to each
+        /// </summary>
+        [JsonProperty("phases")]
+        public bool? Phases { get; set; }
     }
 }
