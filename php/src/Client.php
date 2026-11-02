@@ -15,7 +15,7 @@ use APIVerve\Moonphases\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['today' => true]);
+ * $response = $client->execute(['today' => true, 'phases' => true]);
  * print_r($response);
  * ```
  *
@@ -34,7 +34,8 @@ class Client
      * Validation rules for parameters
      */
     private const VALIDATION_RULES = [
-        'today' => ['type' => 'boolean', 'required' => false]
+        'today' => ['type' => 'boolean', 'required' => false],
+        'phases' => ['type' => 'boolean', 'required' => false]
     ];
 
     /**
