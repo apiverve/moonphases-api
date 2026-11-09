@@ -1,0 +1,16 @@
+name: apiverve_moonphases
+description: "Moon Phases calculates the current lunar phase, illumination percentage, and lunar age for today. It reports waxing or waning status, Earth-moon distance in Earth radii and kilometers, the next principal phase and emoji representations, while paid plans add custom date queries and the dates of the next new moon, first quarter, full moon and last quarter."
+version: 1.2.5
+homepage: https://apiverve.com/marketplace/moonphases?utm_source=dart&utm_medium=referral&utm_content=homepage
+repository: https://github.com/apiverve/moonphases-api/tree/main/dart
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  http: ^1.1.0
+  http_parser: ^4.0.0
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0
